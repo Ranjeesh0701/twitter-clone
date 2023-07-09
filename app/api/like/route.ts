@@ -67,7 +67,7 @@ export async function POST(req: Request) {
     return NextResponse.json(updatedPost);
   } catch (error) {
     console.log(error);
-    return NextResponse.error();
+    return new Response("Something went wrong", { status: 500 });
   }
 }
 export async function DELETE(req: Request) {
@@ -110,6 +110,6 @@ export async function DELETE(req: Request) {
     return NextResponse.json(updatedPost);
   } catch (error) {
     console.log(error);
-    return NextResponse.error();
+    return new Response("Something went wrong", { status: 500 });
   }
 }

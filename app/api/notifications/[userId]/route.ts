@@ -35,6 +35,6 @@ export async function GET(req: Request, { params }: { params: IParams }) {
     return NextResponse.json(notifications);
   } catch (error) {
     console.log(error);
-    return NextResponse.error();
+    return new Response("Something went wrong", { status: 500 });
   }
 }
